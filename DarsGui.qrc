@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/darsaudio.png</file>
+    </qresource>
+</RCC>
