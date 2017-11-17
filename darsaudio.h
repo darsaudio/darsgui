@@ -5,6 +5,7 @@
 #include <QString>
 
 #define DARS_PARAM_GLOBAL_ENABLE_STR          "global-enable"
+#define DARS_PARAM_STEREO_REVERT_STR          "stereo-revert"
 #define DARS_PARAM_CHANNELS_PAN_STR            "channels-pan"       /* -1.0 0 1.0 */
 
 #define DARS_PARAM_PRE_VOLUME_STR             "volume-before-dars"

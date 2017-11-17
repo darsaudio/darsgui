@@ -125,6 +125,13 @@
             </spacer>
            </item>
            <item>
+            <widget class="QCheckBox" name="StereoRevert">
+             <property name="text">
+              <string>ChannelRevert</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QWidget" name="widget_3" native="true">
              <layout class="QHBoxLayout" name="horizontalLayout_2">
               <item>

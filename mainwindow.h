@@ -85,6 +85,8 @@ private slots:
 
     void on_MovieMode_clicked(bool checked);
 
+    void on_StereoRevert_clicked(bool checked);
+
 private:
     Ui::MainWindow *ui;
     QString _conf_home;

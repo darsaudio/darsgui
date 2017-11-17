@@ -73,6 +73,12 @@ void MainWindow::setupInitUi()
         ui->PostVolume->setValue(static_cast<int>(fv*10.0f));
         ui->PostVolumeValue->setText(strValue);
     }
+    if (0 == ds->getDarsDbusParam(DARS_PARAM_STEREO_REVERT_STR, &iv)) {
+        QString strValue;
+        strValue.sprintf("%d", iv);
+        ui->StereoRevert->setChecked(iv ? true : false);
+    }
+
 
     // Eq
     if (0 == ds->getDarsDbusParam(DARS_PARAM_FIREQ_ENABLE_STR, &iv)) {
@@ -964,4 +970,19 @@ void MainWindow::on_MovieMode_clicked(bool checked)
     }
 
     __load_conf(f);
+}
+
+void MainWindow::on_StereoRevert_clicked(bool checked)
+{
+    DarsAudio *ds = DarsAudio::getInstance();
+    int iv = checked ? 1 : 0;
+
+    ds->setDarsDbusParam(DARS_PARAM_STEREO_REVERT_STR, iv);
+
+    if (0 == ds->getDarsDbusParam(DARS_PARAM_STEREO_REVERT_STR, &iv)) {
+        QString strValue;
+        strValue.sprintf("%d", iv);
+        ui->StereoRevert->setChecked(iv ? true : false);
+    }
+    __set_global_enable(true);
 }
